@@ -3,15 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Nexylan packages.
- *
- * (c) Nexylan SAS <contact@nexylan.com>
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-use Nexy\Slack\Client;
+use Yuki\Slack\Client;
 
 class ClientUnitTest extends PHPUnit\Framework\TestCase
 {
@@ -19,7 +15,7 @@ class ClientUnitTest extends PHPUnit\Framework\TestCase
     {
         $client = new Client('http://fake.endpoint', [], new \Http\Mock\Client());
 
-        $this->assertInstanceOf('Nexy\Slack\Client', $client);
+        $this->assertInstanceOf('Yuki\Slack\Client', $client);
     }
 
     public function testInstantiationWithDefaults(): void
@@ -59,7 +55,7 @@ class ClientUnitTest extends PHPUnit\Framework\TestCase
 
         $message = $client->createMessage();
 
-        $this->assertInstanceOf('Nexy\Slack\Message', $message);
+        $this->assertInstanceOf('Yuki\Slack\Message', $message);
 
         $this->assertSame($defaults, $client->getOptions());
     }
@@ -70,7 +66,7 @@ class ClientUnitTest extends PHPUnit\Framework\TestCase
 
         $message = $client->to('@regan');
 
-        $this->assertInstanceOf('Nexy\Slack\Message', $message);
+        $this->assertInstanceOf('Yuki\Slack\Message', $message);
 
         $this->assertSame('@regan', $message->getChannel());
     }

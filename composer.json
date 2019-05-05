@@ -1,5 +1,5 @@
 {
-    "name": "nexylan/slack",
+    "name": "yuki777/slack",
     "description": "A simple PHP package for sending messages to Slack, with a focus on ease of use and elegant syntax.",
     "type": "library",
     "keywords": ["slack", "webhook"],
@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Nexy\\Slack\\": "src/"
+            "Yuki\\Slack\\": "src/"
         }
     },
     "config": {

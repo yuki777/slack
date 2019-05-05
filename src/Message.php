@@ -3,15 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Nexylan packages.
- *
- * (c) Nexylan SAS <contact@nexylan.com>
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Nexy\Slack;
+namespace Yuki\Slack;
 
 /**
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
@@ -22,7 +18,7 @@ final class Message
      * Reference to the Slack client responsible for sending
      * the message.
      *
-     * @var \Nexy\Slack\Client
+     * @var \Yuki\Slack\Client
      */
     private $client;
 
@@ -97,7 +93,7 @@ final class Message
     /**
      * Instantiate a new Message.
      *
-     * @param \Nexy\Slack\Client $client
+     * @param \Yuki\Slack\Client $client
      */
     public function __construct(Client $client)
     {
