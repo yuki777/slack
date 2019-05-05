@@ -169,19 +169,34 @@ final class AttachmentAction
     }
 
     /**
+     * @return AttachmentAction
+     */
+    public function unsetConfirm(): self
+    {
+        unset($this->confirm);
+
+        return $this;
+    }
+
+    /**
      * Get the array representation of this attachment action.
      *
      * @return array
      */
     public function toArray(): array
     {
-        return [
+        $array = [
             'name' => $this->name,
             'text' => $this->text,
             'style' => $this->style,
             'type' => $this->type,
             'value' => $this->value,
-            'confirm' => $this->confirm ? $this->confirm->toArray() : null,
         ];
+
+        if(isset($this->confirm)){
+            $array['confirm'] = $this->confirm->toArray();
+        }
+
+        return $array;
     }
 }
