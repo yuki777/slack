@@ -136,6 +136,12 @@ final class Attachment
     private $actions = [];
 
     /**
+     *
+     * @var string|null
+     */
+    private $callbackId;
+
+    /**
      * @return string
      */
     public function getFallback(): string
@@ -593,6 +599,7 @@ final class Attachment
             'author_name' => $this->authorName,
             'author_link' => $this->authorLink,
             'author_icon' => $this->authorIcon,
+            'callback_id' => $this->callbackId,
         ];
 
         $data['fields'] = $this->getFieldsAsArrays();
@@ -633,5 +640,25 @@ final class Attachment
         }
 
         return $actions;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCallbackId(): ?string
+    {
+        return $this->callbackId;
+    }
+
+    /**
+     * @param string|null $callbackId
+     *
+     * @return $this
+     */
+    public function setCallbackId(?string $callbackId): self
+    {
+        $this->callbackId = $callbackId;
+
+        return $this;
     }
 }
