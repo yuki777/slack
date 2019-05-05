@@ -3,23 +3,19 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Nexylan packages.
- *
- * (c) Nexylan SAS <contact@nexylan.com>
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-use Nexy\Slack\Attachment;
-use Nexy\Slack\Client;
-use Nexy\Slack\Message;
+use Yuki\Slack\Attachment;
+use Yuki\Slack\Client;
+use Yuki\Slack\Message;
 
 class MessageUnitTest extends PHPUnit\Framework\TestCase
 {
     public function testInstantiation(): void
     {
-        $this->assertInstanceOf('Nexy\Slack\Message', $this->getMessage());
+        $this->assertInstanceOf('Yuki\Slack\Message', $this->getMessage());
     }
 
     public function testSetText(): void

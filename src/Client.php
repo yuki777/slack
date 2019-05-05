@@ -3,15 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Nexylan packages.
- *
- * (c) Nexylan SAS <contact@nexylan.com>
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Nexy\Slack;
+namespace Yuki\Slack;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin\BaseUriPlugin;
@@ -91,7 +87,7 @@ final class Client
      * @param string $name      The name of the method
      * @param array  $arguments The method arguments
      *
-     * @return \Nexy\Slack\Message
+     * @return \Yuki\Slack\Message
      */
     public function __call(string $name, array $arguments): Message
     {
@@ -109,7 +105,7 @@ final class Client
     /**
      * Create a new message with defaults.
      *
-     * @return \Nexy\Slack\Message
+     * @return \Yuki\Slack\Message
      */
     public function createMessage(): Message
     {
@@ -125,7 +121,7 @@ final class Client
     /**
      * Send a message.
      *
-     * @param \Nexy\Slack\Message $message
+     * @param \Yuki\Slack\Message $message
      *
      * @throws Exception
      */
@@ -150,7 +146,7 @@ final class Client
     /**
      * Prepares the payload to be sent to the webhook.
      *
-     * @param \Nexy\Slack\Message $message The message to send
+     * @param \Yuki\Slack\Message $message The message to send
      *
      * @return array
      */
@@ -178,7 +174,7 @@ final class Client
     /**
      * Get the attachments in array form.
      *
-     * @param \Nexy\Slack\Message $message
+     * @param \Yuki\Slack\Message $message
      *
      * @return array
      */
